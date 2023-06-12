@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../App.css';
 
 import image1 from '../assets/1.jpeg';
@@ -15,7 +16,7 @@ import SmoothWrapper from './SmoothWrapper';
 function ProjectCard({ image, alt, tags, title }) {
   return (
     <div>
-      <div className="w-80 h-80 grayscale hover:grayscale-0 duration-500">
+      <div className="w-80 h-96 grayscale hover:grayscale-0 duration-500">
         <img src={image} alt={alt} className="w-full h-full object-cover" />
       </div>
       <div className="py-5">
@@ -44,7 +45,7 @@ function Projects() {
       </h1>
 
       <div className="w-full h-full flex justify-center mt-10 inter">
-        <div className="h-auto grid grid-cols-1 md:grid-cols-3 grid-rows-1 gap-4 md:gap-x-4 gap-y-10">
+        <div className="h-auto grid grid-cols-1 md:grid-cols-3 grid-rows-1 gap-4 md:gap-x-5 gap-y-10">
           <ProjectCard
             image={image3}
             alt="Personal Portfolio"
@@ -121,9 +122,10 @@ function About() {
         About Me
       </h1>
 
-      <div className="w-full h-full flex justify-center mt-10">
-        <div className="h-auto flex justify-start gap-20">
-          <div className="inter w-1/3 flex flex-col items-center">
+      <div className="w-full h-full mt-10">
+        <div className="h-auto flex flex-col gap-20 justify-start md:flex-row">
+          
+          <div className="inter flex flex-col items-center w-1/3">
             <p className="text-xl font-thin leading-8">
               I drink coffee, I eat rice, I write code, and improve my design and skills everyday. I am honored to
               work with special people. Let's connect and explore exciting opportunities together!
@@ -154,7 +156,7 @@ function About() {
               </li>
               <li>
                 <a id="nav" href='mailto:gthnmp@gmail.com' className="relative py-1 cursor-pointer">
-                  gthnmp@gmail.com
+                  Mail
                 </a>
               </li>
             </ul>
@@ -164,50 +166,52 @@ function About() {
     </div>
   );
 }
-const Menu = () => {
-  const [menuState, setMenuState] = useState(false);
 
-  const toggleMenuState = () => {
-    setMenuState((prevState) => !prevState);
-  };
+const Menu = () => {
+  const backgroundRef = useRef(null);
+  const [ menuState, setMenuState ] = useState(false);
+  
+  function toggleMenuState(){
+    setMenuState((prevState) => !prevState)
+  }
+
+  useEffect(() => {
+    const background = backgroundRef.current;
+
+    function handleBackgroundClick(){
+      console.log('foo');
+      toggleMenuState();
+    }
+
+    background.addEventListener('click', handleBackgroundClick);
+
+    return () => {
+      background.removeEventListener('click', handleBackgroundClick);
+    }
+  },[])
 
   return (
-    <div className="fixed flex flex-col items-center justify-center inter z-10 bottom-10">
-      <div
-        id="navigation"
-        className={`${
-          menuState ? "h-60" : "h-0"
-        } absolute w-screen bg-neutral-200 transition-height duration-300`}
-      >
-        <ul
-          className={`flex justify-center pt-10 gap-20 inter font-light text-2xl ${
-            menuState ? "opacity-100" : "opacity-0"
-          } text-black transition-opacity duration-300`}
-        >
-          <li>
-            <a id="menu" className="relative py-1 cursor-pointer">
-              About
-            </a>
-          </li>
-          <li>
-            <a id="menu" className="relative py-1 cursor-pointer">
-              Works
-            </a>
-          </li>
-          <li>
-            <a id="menu" className="relative py-1 cursor-pointer">
-              Contact
-            </a>
-          </li>
-        </ul>
+    <div id = "menu-container" className ="relative w-screen h-screen z-20">
+      <div id = "background" ref = {backgroundRef} className={`fixed transition-all duration-300 ${menuState ? "h-full w-full bg-neutral-900 opacity-50" : ""}`}></div>
+  
+      <div id = "navigation" className='fixed w-full flex justify-center items-center bottom-0'>
+
+        <div id = "menubar" className={`absolute w-full ${menuState ? "h-60 bg-slate-200 opacity-100" : "h-0"} bottom-0`}>
+          <ul className='flex gap-20 text-2xl font-light inter text-black justify-center pt-20'>
+            <li><a id = "menu" href = "/" className='relative py-1'>Home</a></li>
+            <li><a id = "menu" href = "/about" className='relative py-1'>About</a></li>
+            <li><a id = "menu" href = "/works" className='relative py-1'>Works</a></li>
+            <li><a id = "menu" href = "/contact" className='relative py-1'>Contact</a></li>
+          </ul>
+        </div>
+
+        <button
+          id = "nav-button"
+          className={`absolute w-12 h-12 rounded-full bottom-10 z-10 hover:scale-150 active:scale-90 ${menuState ? "bg-neutral-900" : "bg-white"}
+          `}
+          onClick={toggleMenuState}
+        />
       </div>
-      <button
-        id="nav-menu"
-        className={`w-12 h-12 z-10 ${
-          menuState ? "bg-neutral-900" : "bg-slate-200"
-        } rounded-full hover:scale-150 active:scale-90 transition-all duration-300`}
-        onClick={toggleMenuState}
-      />
     </div>
   );
 };
@@ -215,7 +219,7 @@ const Menu = () => {
 export default function Content() { 
   return (
     <>
-    <SmoothWrapper className="">
+    <SmoothWrapper className="z-10">
       <Introduction />
       <Projects />
       <Services />

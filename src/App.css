@@ -14,12 +14,6 @@
      bottom: 0;
 }
 
-#nav-menu {
-     transition: transform, background-color;
-     transition-timing-function: ease;
-     transition-duration: 400ms;
-}
-
 #nav:after {
      position: absolute;
      content: "";
@@ -35,12 +29,6 @@
      width: 100%;
 }
 
-#navigation {
-     transition: height,visibility;
-     transition-timing-function: ease;
-     transition-duration: 400ms;
-}
-
 #menu:after {
      position: absolute;
      content: "";
@@ -54,4 +42,16 @@
 
 #menu:hover::after{
      width: 100%;
+}
+
+#nav-button {
+     transition: transform, background-color;
+     transition-timing-function: ease;
+     transition-duration: 400ms;
+}
+
+#menubar {
+     transition: all;
+     transition-timing-function: ease;
+     transition-duration: 500ms;
 }
