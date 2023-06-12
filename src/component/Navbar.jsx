@@ -1,36 +1,17 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from "react";
 import logo from '/react.svg';
 
 const Navbar = () => {
-     const buttonRef = useRef(null);
-     const [ buttonState, setButtonState ] = useState(false);
-     useEffect(() => {
-          const handleClick = () => {
-               setButtonState(true);
-               console.log(buttonState)
-          }
-          buttonRef.current.addEventListener('click', handleClick);
-          return() => {
-               buttonRef.current.removeEventListener('click', handleClick);
-          }
-     },[buttonState])
+  const [ menuState, setMenuState ] = useState(false);
 
-     return(
-          <header className='fixed top-0 w-screen flex items-center justify-between px-16 py-8 inter z-50'>
-
-          <div className='flex flex-col items-start gap-0 font-extralight leading-10 text-xl select-none'>
-               {/* Gathan Mahesa */}
-               <img src={logo} alt="ngentot"/>
-          </div>
-
-          <ul className='flex gap-20 uppercase font-light text-base'>
-               <li><a href ="https://www.instagram.com/er.octa/" id = "nav" className='relative py-1'>About</a></li>
-               <li><a href = "https://www.instagram.com/er.octa/" id = "nav" className='relative py-1'>Works</a></li>
-               <li><button id = "nav" ref = {buttonRef} className='border-none relative'>CONTACT</button></li>
-          </ul>
-          </header>
-     )
+  return(
+      <header className='fixed bottom-0 w-screen flex flex-col items-center justify-center px-16 py-16 inter z-50'>
+        <h1 className={`${menuState == true ? "" : "hidden"}`}>foo</h1>
+        <button id="nav-menu" className="w-12 h-12 bg-slate-200 rounded-full hover:scale-150 active:scale-90" onClick={() => setMenuState(menuState == true ? false : true )}/>
+      </header>
+  )
 }
 
 export default Navbar;

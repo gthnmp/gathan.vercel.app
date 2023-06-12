@@ -17,10 +17,10 @@ html, body {
      overflow-x: hidden;
 }
 
-
+/* 
 ::-webkit-scrollbar{
      display: none;
-}
+} */
 
 .inter {
      font-family: 'Inter', sans-serif;

@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 
 import image1 from '../assets/1.jpeg';
@@ -15,7 +15,7 @@ import SmoothWrapper from './SmoothWrapper';
 function ProjectCard({ image, alt, tags, title }) {
   return (
     <div>
-      <div className="w-80 h-80 grayscale">
+      <div className="w-80 h-80 grayscale hover:grayscale-0 duration-500">
         <img src={image} alt={alt} className="w-full h-full object-cover" />
       </div>
       <div className="py-5">
@@ -116,14 +116,14 @@ function Services() {
 
 function About() {
   return (
-    <div className="w-screen h-full flex flex-col items-start px-24 py-16">
+    <div className="w-screen h-full flex flex-col items-start  px-24 py-16">
       <h1 id="heading" className="relative text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
         About Me
       </h1>
 
       <div className="w-full h-full flex justify-center mt-10">
-        <div className="h-auto grid grid-cols-1 md:grid-cols-3 grid-rows-1 gap-4 md:gap-x-4 gap-y-10">
-          <div className="inter flex flex-col items-center">
+        <div className="h-auto flex justify-start gap-20">
+          <div className="inter w-1/3 flex flex-col items-center">
             <p className="text-xl font-thin leading-8">
               I drink coffee, I eat rice, I write code, and improve my design and skills everyday. I am honored to
               work with special people. Let's connect and explore exciting opportunities together!
@@ -164,20 +164,64 @@ function About() {
     </div>
   );
 }
+const Menu = () => {
+  const [menuState, setMenuState] = useState(false);
+
+  const toggleMenuState = () => {
+    setMenuState((prevState) => !prevState);
+  };
+
+  return (
+    <div className="fixed flex flex-col items-center justify-center inter z-10 bottom-10">
+      <div
+        id="navigation"
+        className={`${
+          menuState ? "h-60" : "h-0"
+        } absolute w-screen bg-neutral-200 transition-height duration-300`}
+      >
+        <ul
+          className={`flex justify-center pt-10 gap-20 inter font-light text-2xl ${
+            menuState ? "opacity-100" : "opacity-0"
+          } text-black transition-opacity duration-300`}
+        >
+          <li>
+            <a id="menu" className="relative py-1 cursor-pointer">
+              About
+            </a>
+          </li>
+          <li>
+            <a id="menu" className="relative py-1 cursor-pointer">
+              Works
+            </a>
+          </li>
+          <li>
+            <a id="menu" className="relative py-1 cursor-pointer">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button
+        id="nav-menu"
+        className={`w-12 h-12 z-10 ${
+          menuState ? "bg-neutral-900" : "bg-slate-200"
+        } rounded-full hover:scale-150 active:scale-90 transition-all duration-300`}
+        onClick={toggleMenuState}
+      />
+    </div>
+  );
+};
 
 export default function Content() { 
   return (
-    // <main className="fixed will-change-transform top-0 w-screen bg-neutral-950 h-max flex items-center px-24 flex-col">
-    //   <Introduction />
-    //   <Projects />
-    //   <Services />
-    //   <About />
-    // </main>
-    <SmoothWrapper>
+    <>
+    <SmoothWrapper className="">
       <Introduction />
       <Projects />
       <Services />
       <About />
     </SmoothWrapper>
+    <Menu />
+    </>
   );
 }

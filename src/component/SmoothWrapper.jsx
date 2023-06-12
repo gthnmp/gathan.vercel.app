@@ -9,7 +9,7 @@ const SmoothWrapper = ( {className : additionalClassNames,...props} ) => {
 
 	let current = 0;
 	let target = 0;
-	const ease = 0.075;
+	const ease = 0.06;
 
 	function lerp (start, end, t) {
 		return start * (1 - t) + end * t;
