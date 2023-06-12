@@ -4,12 +4,12 @@ import {useRef, useEffect} from 'react'
 
 const SmoothWrapper = ( {className : additionalClassNames,...props} ) => {
 	const contentRef = useRef(null);
-	const defaultClassName = "fixed will-change-transform w-screen h-max flex flex-col gap-5"
+	const defaultClassName = "fixed will-change-transform top-0 w-screen bg-neutral-950 h-max flex items-center px-24 flex-col"
 	const customizedClassName = `${defaultClassName} ${additionalClassNames}`;
 
 	let current = 0;
 	let target = 0;
-	const ease = 0.08;
+	const ease = 0.075;
 
 	function lerp (start, end, t) {
 		return start * (1 - t) + end * t;
