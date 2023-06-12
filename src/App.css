@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+#heading:after {
+     content: "";
+     position:absolute;
+     background-color: white;
+     height: 1px;
+     width: 200%;
+     left:0;
+     bottom: 0;
+}
+
+
+#nav:after {
+     position: absolute;
+     content: "";
+     background-color: white;
+     height: 1px;
+     width: 0;
+     left:0;
+     bottom: 0;
+     transition: 0.3s;
+}
+
+#nav:hover::after{
+     width: 100%;
+}
