@@ -177,18 +177,31 @@ const Menu = () => {
 
   useEffect(() => {
     const background = backgroundRef.current;
+    //turn off scrolling event when menuState is true, and false otherwise
 
     function handleBackgroundClick(){
-      console.log('foo');
       toggleMenuState();
     }
 
     background.addEventListener('click', handleBackgroundClick);
 
+    function handleScroll(event) {
+      if (menuState) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }
+
+    window.addEventListener('wheel', handleScroll, { passive: false });
+    window.addEventListener('scroll', handleScroll, { passive: false });
+
     return () => {
       background.removeEventListener('click', handleBackgroundClick);
-    }
-  },[])
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  },[menuState])
 
   return (
     <div id = "menu-container" className ="relative w-screen h-screen z-20">
