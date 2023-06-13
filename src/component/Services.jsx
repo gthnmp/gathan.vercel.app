@@ -19,9 +19,9 @@ export default function Services() {
   }
 
   return (
-    <div className="w-screen h-full flex flex-col items-start px-24 py-16">
+    <div className="w-screen h-full flex flex-col items-start px-8 py-16 md:px-24 md:py-16">
       <ServiceHeadline />
-      <div className="w-full h-max flex xl:flex-row sm:flex-col justify-start gap-20 mt-10">
+      <div className="w-full h-max max-h-96 flex flex-col md:flex-row justify-start gap-10 md:gap-20 mt-10">
         <ServiceList services={services} handleServiceHover={handleServiceHover} />
         <ServiceCard content={cardContent} />
       </div>
@@ -30,14 +30,14 @@ export default function Services() {
 }
 
 const ServiceHeadline = () => (
-  <h1 id="heading" className="relative text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
+  <h1 id="heading" className="relative text-3xl py-5 md:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
     Services
   </h1>
 );
 
 const ServiceList = ({ services, handleServiceHover }) => {
   return (
-    <ul id="service-list" className="inter font-thin text-2xl flex flex-col gap-4">
+    <ul id="service-list" className="inter font-thin text-xl md:text-2xl flex flex-col gap-4">
       {Object.entries(services).map(([service, value], index) => (
         <li key={index}>
           <a
@@ -56,7 +56,7 @@ const ServiceList = ({ services, handleServiceHover }) => {
 const ServiceCard = (props) => {
   return (
     <div className={`xl:w-1/3 md:w-auto`}>
-      <p className="text-white inter font-thin text-xl tracking-wider duration-100 transition-all">
+      <p className="text-white inter font-light text-xl tracking-wider duration-100 transition-all">
         {props.content}
       </p>
     </div>
