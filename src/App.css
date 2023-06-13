@@ -2,17 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.hidden{
-     transform: translateY(100%);
-     transition: all 1s;
-     transition-timing-function: ease;
-}
-
 .show {
-     transform: translateY(-5%);
+     transform: translateY(0%);
+   }
+   
+.word {
+transform: translateY(100%);
+transition: all 1s;
+transition-timing-function: ease;
+font-kerning: none;
+will-change: transform;
 }
-
+   
 .line {
      margin: 0;
      left:0;
@@ -20,11 +21,6 @@
      overflow : hidden;
      font-kerning: none;
 }
-
-.word {
-     font-kerning: none;
-}
-
 
 #heading:after {
      content: "";

@@ -13,7 +13,7 @@ const contactLinks = [
 
 function AboutTitle() {
   return (
-    <h1 id="heading" className="relative py-5 text-3xl lg:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
+    <h1 id="heading" className="relative py-5 text-3xl lg:text-4xl w-1/2 leading-normal tracking-wide inter font-thin">
       About Me
     </h1>
   );

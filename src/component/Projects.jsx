@@ -20,7 +20,7 @@ function ProjectCard({ image, alt, tags, title }) {
 export default function Projects() {
   return (
     <div className="w-screen h-max flex flex-col items-start px-8 md:px-24">
-      <h1 id="heading" className="relative text-3xl py-5 lg:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
+      <h1 id="heading" className="relative text-3xl py-5 lg:text-4xl w-1/2 leading-normal tracking-wide inter font-thin">
         Selected Projects
       </h1>
 

@@ -14,36 +14,38 @@ import '../App.css';
 import { useEffect } from 'react';
 
 export default function Content() { 
-
-  useEffect(() => {
-    const headline = new SplitType("h1", { types : 'lines, words'}); 
-    const paragraph = new SplitType("p", { types : 'lines, words'}); 
-    const anchor = new SplitType("a", { types : 'lines, words'}); 
+  function textReveal(){
     
-    const words = document.querySelectorAll('.word');
-    words.forEach(word => {
-      word.classList.add("hidden")
-    })
+    const targets = SplitType.create('h1, p, a', { types: "lines, words" });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target); // Stop observing the target when it is already intersecting
+          console.log(entry.target.style)
+          entry.target.style.transform = "translateY(0%)";
+          observer.unobserve(entry.target);
         }
       });
     });
-
-    words.forEach(word => observer.observe(word));
-
+    
+    targets.words.forEach((word) => {
+      observer.observe(word);
+    });
+    
     return () => {
-      observer.disconnect(); // Cleanup: Stop observing all targets
+      observer.disconnect();
     };
+  }
+
+  useEffect(() => {
+    if (window.innerWidth >= 768){
+      textReveal()
+    }
   }, []);
   
   return (
     <>
-      <SmoothWrapper id = "target" className="z-10">
+      <SmoothWrapper className="z-10">
         <Introduction />
         <Projects />
         <Services />
