@@ -29,9 +29,15 @@ const SmoothWrapper = ( {className : additionalClassNames,...props} ) => {
 	}
 	
 	useEffect(() => {
-		const contentHeight = contentRef.current.getBoundingClientRect().height 
-		document.body.style.height = `${contentHeight}px`
+    function updateBodyHeight(){
+      const contentHeight = contentRef.current.getBoundingClientRect().height 
+      document.body.style.height = `${contentHeight}px`
+    }
+
+    updateBodyHeight();
 		smoothScroll();
+
+    window.addEventListener('resize', updateBodyHeight)
 	},[])
 
 	return (
