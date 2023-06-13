@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 
+.hidden{
+     transform: translateY(100%);
+     transition: all 1s;
+     transition-timing-function: ease;
+}
+
+.show {
+     transform: translateY(-5%);
+}
+
+.line {
+     margin: 0;
+     left:0;
+     position: relative;
+     overflow : hidden;
+     font-kerning: none;
+}
+
+.word {
+     font-kerning: none;
+}
+
 
 #heading:after {
      content: "";

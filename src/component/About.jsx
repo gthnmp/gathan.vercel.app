@@ -22,7 +22,7 @@ function AboutTitle() {
 function AboutContact() {
   return (
     <div className="inter flex flex-col items-center">
-      <ul className="font-thin flex xl:flex-col lg:flex-row gap-5 lg:gap-1">
+      <ul className="font-thin flex text-sm lg:text-xl lg:flex-col flex-row gap-5 lg:gap-1">
         {contactLinks.map((link, index) => (
           <li key={index}>
             <a id="nav" href={link.url} target="_blank" className="relative py-1 cursor-pointer">
@@ -37,18 +37,16 @@ function AboutContact() {
 
 function AboutContent() {
   return (
-    <div className="inter flex flex-col items-center w-full lg:w-1/3">
-      <p className="text-xl font-thin leading-8">
+      <p className="inter w-full lg:w-1/3 text-xl font-thin leading-8">
         I drink coffee, I eat rice, I write code, and improve my design and skills everyday. I am honored to
         work with special people. Let's connect and explore exciting opportunities together!
       </p>
-    </div>
   );
 }
 
 export default function About() {
   return (
-    <div className="w-screen h-full flex flex-col items-start px-8 py-16 lg:px-24 lg:py-16">
+    <div className="w-screen h-full flex flex-col items-start px-8 lg:px-24">
       <AboutTitle />
       <div className="w-full h-full py-10">
         <div className="h-auto flex flex-col gap-20 justify-start pb-20 lg:flex-row">

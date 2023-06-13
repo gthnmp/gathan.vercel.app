@@ -26,12 +26,12 @@ export default function Services() {
   },[])
 
   return (
-    <div className="w-screen h-full flex flex-col items-start px-8 pt-96 lg:px-24">
+    <div className="w-screen h-full flex flex-col items-start px-8 lg:px-24">
       <h1 id="heading" ref ={headingRef} className="relative text-3xl py-5 lg:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
         Services
       </h1>
 
-      <div className="w-full h-96 flex flex-col lg:flex-row justify-start gap-10 lg:gap-20 mt-10">
+      <div className="w-full flex flex-col lg:flex-row justify-start gap-10 lg:gap-20 mt-10">
         <ServiceList services={services} handleServiceHover={handleServiceHover} />
 
         <div id = "service-card" className="lg:w-1/3 w-auto">

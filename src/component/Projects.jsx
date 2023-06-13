@@ -7,11 +7,11 @@ import image4 from '../assets/4.jpeg';
 
 function ProjectCard({ image, alt, tags, title }) {
   return (
-    <div className="w-full lg:w-80 h-80 md:h-96 grayscale hover:grayscale-0 duration-500">
+    <div className="w-full lg:w-80 h-96 md:h-96 grayscale hover:grayscale-0 duration-500">
       <img src={image} alt={alt} className="w-full h-full object-cover" />
-      <div className="py-5">
-        <h1 className="text-xs text-gray-400 font-light">{tags.join(', ')}</h1>
+      <div className="pt-4 flex flex-col items-center">
         <p className="text-xl font-light">{title}</p>
+        <h1 className="text-xs text-gray-400 font-light">{tags.join(', ')}</h1>
       </div>
     </div>
   );
@@ -20,12 +20,12 @@ function ProjectCard({ image, alt, tags, title }) {
 export default function Projects() {
   return (
     <div className="w-screen h-max flex flex-col items-start px-8 md:px-24">
-      <h1 id="heading" className="relative py-5 text-3xl md:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
+      <h1 id="heading" className="relative text-3xl py-5 lg:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
         Selected Projects
       </h1>
 
       <div className="w-full h-full flex justify-center mt-10 inter">
-        <div className="h-auto grid grid-cols-1 lg:grid-cols-3 grid-rows-1 lg:grid-row-3 md:gap-x-5 gap-y-20">
+        <div className="h-auto grid grid-cols-1 lg:grid-cols-3 grid-rows-1 lg:grid-row-3 lg:gap-x-5 gap-y-28">
           <ProjectCard
             image={image3}
             alt="Personal Portfolio"
