@@ -55,3 +55,10 @@
      transition-timing-function: ease;
      transition-duration: 500ms;
 }
+
+#service-card{
+     color:red;
+     transition: all;
+     transition-timing-function: ease;
+     transition-duration: 300ms;
+}

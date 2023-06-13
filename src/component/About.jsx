@@ -13,7 +13,7 @@ const contactLinks = [
 
 function AboutTitle() {
   return (
-    <h1 id="heading" className="relative py-5 text-3xl md:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
+    <h1 id="heading" className="relative py-5 text-3xl lg:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
       About Me
     </h1>
   );
@@ -22,7 +22,7 @@ function AboutTitle() {
 function AboutContact() {
   return (
     <div className="inter flex flex-col items-center">
-      <ul className="font-thin flex xl:flex-col md:flex-row gap-5 md:gap-1">
+      <ul className="font-thin flex xl:flex-col lg:flex-row gap-5 lg:gap-1">
         {contactLinks.map((link, index) => (
           <li key={index}>
             <a id="nav" href={link.url} target="_blank" className="relative py-1 cursor-pointer">
@@ -37,7 +37,7 @@ function AboutContact() {
 
 function AboutContent() {
   return (
-    <div className="inter flex flex-col items-center w-full md:w-1/3">
+    <div className="inter flex flex-col items-center w-full lg:w-1/3">
       <p className="text-xl font-thin leading-8">
         I drink coffee, I eat rice, I write code, and improve my design and skills everyday. I am honored to
         work with special people. Let's connect and explore exciting opportunities together!
@@ -48,10 +48,10 @@ function AboutContent() {
 
 export default function About() {
   return (
-    <div className="w-screen h-full flex flex-col items-start px-8 py-16 md:px-24 md:py-16">
+    <div className="w-screen h-full flex flex-col items-start px-8 py-16 lg:px-24 lg:py-16">
       <AboutTitle />
       <div className="w-full h-full py-10">
-        <div className="h-auto flex flex-col gap-20 justify-start pb-20 md:flex-row">
+        <div className="h-auto flex flex-col gap-20 justify-start pb-20 lg:flex-row">
           <AboutContent />
           <AboutContact />
         </div>

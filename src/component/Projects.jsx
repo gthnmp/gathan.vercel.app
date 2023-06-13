@@ -7,7 +7,7 @@ import image4 from '../assets/4.jpeg';
 
 function ProjectCard({ image, alt, tags, title }) {
   return (
-    <div className="w-full md:w-80 h-80 md:h-96 grayscale hover:grayscale-0 duration-500">
+    <div className="w-full lg:w-80 h-80 md:h-96 grayscale hover:grayscale-0 duration-500">
       <img src={image} alt={alt} className="w-full h-full object-cover" />
       <div className="py-5">
         <h1 className="text-xs text-gray-400 font-light">{tags.join(', ')}</h1>
@@ -19,13 +19,13 @@ function ProjectCard({ image, alt, tags, title }) {
 
 export default function Projects() {
   return (
-    <div className="w-screen h-full flex flex-col items-start px-8 py-8 md:px-24">
+    <div className="w-screen h-max flex flex-col items-start px-8 md:px-24">
       <h1 id="heading" className="relative py-5 text-3xl md:text-5xl w-1/2 leading-normal tracking-wide inter font-thin">
         Selected Projects
       </h1>
 
       <div className="w-full h-full flex justify-center mt-10 inter">
-        <div className="h-auto grid grid-cols-1 md:grid-cols-3 grid-rows-1 md:grid-row-3 md:gap-x-5 gap-y-20">
+        <div className="h-auto grid grid-cols-1 lg:grid-cols-3 grid-rows-1 lg:grid-row-3 md:gap-x-5 gap-y-20">
           <ProjectCard
             image={image3}
             alt="Personal Portfolio"
