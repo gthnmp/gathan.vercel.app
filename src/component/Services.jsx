@@ -22,16 +22,12 @@ export default function Services() {
 
   return (
     <div className="w-screen h-full flex flex-col items-start px-8 lg:px-24">
-      <h1 id="heading" ref={headingRef} className="relative text-3xl py-5 lg:text-4xl w-1/2 leading-normal tracking-wide inter font-thin">
-        Services
+      <h1 id="heading" ref={headingRef} className="relative text-3xl py-5 lg:text-4xl w-1/2 leading-normal tracking-wide inter font-medium">
+        Skills
       </h1>
 
       <div className="w-full flex flex-col lg:flex-row justify-start gap-10 lg:gap-20 mt-10">
         <ServiceList services={services} handleServiceHover={handleServiceHover} />
-
-        {cardVisibility && (
-          <ServiceCard visibility={cardVisibility} content={cardContent} />
-        )}
       </div>
     </div>
   );
@@ -39,7 +35,7 @@ export default function Services() {
 
 const ServiceList = ({ services, handleServiceHover }) => {
   return (
-    <ul id="service-list" className="inter font-thin text-xl lg:text-2xl flex flex-col gap-4">
+    <ul id="service-list" className="inter font-medium text-xl lg:text-2xl flex flex-col gap-4">
       {Object.entries(services).map(([service, value], index) => (
         <li key={index}>
           <a
@@ -53,15 +49,5 @@ const ServiceList = ({ services, handleServiceHover }) => {
         </li>
       ))}
     </ul>
-  );
-};
-
-const ServiceCard = ({ visibility, content }) => {
-  return (
-    <div id="service-card" className={`${visibility ? 'lg:w-1/3 w-auto' : ''}`}>
-      <p className="text-white inter font-light text-lg tracking-wider duration-100 transition-all">
-        {content}
-      </p>
-    </div>
   );
 };

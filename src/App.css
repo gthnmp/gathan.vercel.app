@@ -50,7 +50,7 @@ will-change: transform;
 #menu:after {
      position: absolute;
      content: "";
-     background-color: black;
+     background-color: white;
      height: 1px;
      width: 0;
      left:0;

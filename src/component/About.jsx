@@ -13,7 +13,7 @@ const contactLinks = [
 
 function AboutTitle() {
   return (
-    <h1 id="heading" className="relative py-5 text-3xl lg:text-4xl w-1/2 leading-normal tracking-wide inter font-thin">
+    <h1 id="heading" className="relative py-5 text-3xl lg:text-4xl w-1/2 leading-normal tracking-wide inter font-medium">
       About Me
     </h1>
   );
@@ -22,7 +22,7 @@ function AboutTitle() {
 function AboutContact() {
   return (
     <div className="inter flex flex-col items-center">
-      <ul className="font-thin flex text-sm lg:text-xl lg:flex-col flex-row gap-5 lg:gap-1">
+      <ul className="font-medium flex text-sm lg:text-xl lg:flex-col flex-row gap-5 lg:gap-1">
         {contactLinks.map((link, index) => (
           <li key={index}>
             <a id="nav" href={link.url} target="_blank" className="relative py-1 cursor-pointer">
@@ -37,7 +37,7 @@ function AboutContact() {
 
 function AboutContent() {
   return (
-      <p className="inter w-full lg:w-1/3 text-xl font-thin leading-8">
+      <p className="inter w-full lg:w-1/3 text-xl font-medium leading-8">
         I drink coffee, I eat rice, I write code, and improve my design and skills everyday. I am honored to
         work with special people. Let's connect and explore exciting opportunities together!
       </p>

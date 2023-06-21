@@ -7,7 +7,7 @@ const SmoothWrapper = ({ className: additionalClassNames, ...props }) => {
   let current = 0;
   let target = 0;
   const defaultClassName =
-    'fixed will-change-transform top-0 w-screen bg-neutral-950 h-max flex items-center px-24 flex-col gap-20 lg:gap-40';
+    'fixed will-change-transform top-0 w-screen bg-transparent h-max flex items-center px-24 flex-col gap-20 lg:gap-40';
   const customizedClassName = `${defaultClassName} ${additionalClassNames}`;
 
   useEffect(() => {
@@ -48,25 +48,6 @@ const SmoothWrapper = ({ className: additionalClassNames, ...props }) => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    function handleLoad() {
-      const scrollPosition = sessionStorage.getItem('scrollPosition');
-      if (scrollPosition !== null) {
-        // Reset scroll position
-        window.scrollTo(0, scrollPosition);
-
-        // Clear the stored scroll position
-        sessionStorage.removeItem('scrollPosition');
-      }
-    }
-
-    window.addEventListener('load', handleLoad);
-
-    return () => {
-      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
