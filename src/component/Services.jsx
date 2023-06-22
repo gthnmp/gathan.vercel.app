@@ -2,33 +2,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useRef } from 'react';
 
-const services = {
-  'Frontend Development': "For frontend development, I primarily use ReactJS with the Vite framework. For smaller projects, I commonly use pure CSS, but for big projects, I prefer using Tailwind because it saves me plenty of time. Sometimes, I even use both.",
-  'Networking': "In the networking world, I am familiar with using brands like MikroTik and Cisco. I studied both brands during my vocational high school education.",
-  'Video Editing': "For video editing, my primary editor is Adobe Premiere Pro. I find other video editing software rather confusing because I am accustomed to using Premiere Pro.",
-  'Graphic Design': "When I'm doing graphic design, what I usually create is web designs. But during my student years, I make posters and Instagram slider posts quite often.",
-  // 'Sysadmin': "I have quite skills in Linux. I can do bash scripting and automation using Python.",
-};
-
 export default function Services() {
-  const headingRef = useRef(null);
-  const [cardVisibility, setCardVisibility] = useState(false);
-  const [cardContent, setCardContent] = useState('');
-
-  function handleServiceHover(value) {
-    setCardVisibility((prevState) => !prevState);
-    setCardContent(value);
-  }
 
   return (
-    <div className="w-screen h-full flex flex-col items-start px-8 lg:px-24">
-      <h1 id="heading" ref={headingRef} className="relative text-3xl py-5 lg:text-4xl w-1/2 leading-normal tracking-wide inter font-medium">
-        Skills
-      </h1>
+    <div className="w-screen h-screen flex flex-col justify-center items-center gap-10">
+      <h3 className="noto-serif text-base">3</h3>
 
-      <div className="w-full flex flex-col lg:flex-row justify-start gap-10 lg:gap-20 mt-10">
-        <ServiceList services={services} handleServiceHover={handleServiceHover} />
-      </div>
+      <h1 className="text-8xl px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
+        <div>Technical</div>
+        <div>and</div>
+        <div>Other Skills</div>
+
+      </h1>
+      <p className="text-2xl px-8 text-center w-3/4 leading-tight tracking-normal inter font-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, quae inventore tenetur iste magni eaque rem et autem excepturi veritatis quisquam consequatur omnis officia est sint assumenda laudantium sunt soluta vel ipsam magnam quos? Eaque molestias iusto sapiente fugiat praesentium.
+      </p>
     </div>
   );
 }

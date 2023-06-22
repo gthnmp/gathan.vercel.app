@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
      user-select: none;
@@ -28,12 +29,16 @@ html, body {
 }
 
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
      display: none;
-}
+} */
 
 .inter {
      font-family: 'Inter', sans-serif;
+}
+
+.noto-serif {
+     font-family: 'Noto Serif', serif;
 }
 
 .ease-in-back {

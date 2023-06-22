@@ -6,12 +6,12 @@ const SmoothWrapper = ({ className: additionalClassNames, ...props }) => {
   const contentRef = useRef(null);
   let current = 0;
   let target = 0;
+  let ease = 0.5;
   const defaultClassName =
-    'fixed will-change-transform top-0 w-screen bg-transparent h-max flex items-center px-24 flex-col gap-20 lg:gap-40';
+    'fixed will-change-transform';
   const customizedClassName = `${defaultClassName} ${additionalClassNames}`;
 
   useEffect(() => {
-    let ease = 0.06;
 
     function lerp(start, end, t) {
       return start * (1 - t) + end * t;
@@ -25,8 +25,7 @@ const SmoothWrapper = ({ className: additionalClassNames, ...props }) => {
       current = lerp(current, target, ease);
       current = parseFloat(current.toFixed(2));
       target = window.scrollY;
-
-      setTransform(contentRef.current, `translateY(${-current}px)`);
+      setTransform(contentRef.current, `translate3d(0, ${-current}px,0)`);
       requestAnimationFrame(smoothScroll);
     }
 

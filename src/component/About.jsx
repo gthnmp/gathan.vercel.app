@@ -1,59 +1,15 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react/jsx-no-target-blank */
-import React from 'react';
-
-const contactLinks = [
-  { name: 'Github', url: 'https://github.com/gthnmp' },
-  { name: 'Linkedin', url: 'https://linkedin.com/in/gathan' },
-  { name: 'Twitter', url: 'https://twitter.com/viograce_' },
-  { name: 'Instagram', url: 'https://www.instagram.com/gthnmp/' },
-  { name: 'Mail', url: 'mailto:gthnmp@gmail.com' },
-];
-
-function AboutTitle() {
+export default function Introduction() {
   return (
-    <h1 id="heading" className="relative py-5 text-3xl lg:text-4xl w-1/2 leading-normal tracking-wide inter font-medium">
-      About Me
-    </h1>
-  );
-}
-
-function AboutContact() {
-  return (
-    <div className="inter flex flex-col items-center">
-      <ul className="font-medium flex text-sm lg:text-xl lg:flex-col flex-row gap-5 lg:gap-1">
-        {contactLinks.map((link, index) => (
-          <li key={index}>
-            <a id="nav" href={link.url} target="_blank" className="relative py-1 cursor-pointer">
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function AboutContent() {
-  return (
-      <p className="inter w-full lg:w-1/3 text-xl font-medium leading-8">
-        I drink coffee, I eat rice, I write code, and improve my design and skills everyday. I am honored to
-        work with special people. Let's connect and explore exciting opportunities together!
+    <div className="w-screen h-screen flex flex-col justify-center items-center gap-10">
+      <h3 className="noto-serif text-base">1</h3>
+      <a href = "/" className="text-8xl px-8 hover:text-red-500 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
+        <div>About Me,</div>
+        <div>Myself, & I</div>
+      </a>
+      <p className="text-2xl px-8 text-center w-3/4 leading-tight tracking-normal inter font-light">
+      I'm a graduate student majoring in Computer and Network Engineering, specializing in software development and networking. I have programming skills in web development, including ReactJS, CSS, Tailwind, ThreeJS, and the MERN Stack. Additionally, I have extensive knowledge in networking, covering routing, switching, VLAN, firewall, and protocols.
       </p>
-  );
-}
-
-export default function About() {
-  return (
-    <div className="w-screen h-full flex flex-col items-start px-8 lg:px-24">
-      <AboutTitle />
-      <div className="w-full h-full py-10">
-        <div className="h-auto flex flex-col gap-20 justify-start pb-20 lg:flex-row">
-          <AboutContent />
-          <AboutContact />
-        </div>
-      </div>
     </div>
   );
 }

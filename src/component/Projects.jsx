@@ -19,28 +19,16 @@ function ProjectCard({ image, alt, context, title }) {
 
 export default function Projects() {
   return (
-    <div className="w-screen h-max lg:h-screen flex flex-col items-start px-8 md:px-24 relative">
-      <h1 id="heading" className="lg:absolute text-7xl py-5 lg:text-9xl w-1/2 leading-tight tracking-wide inter font-semibold">
-        Selected Projects.
+    <div className="w-screen h-screen flex flex-col justify-center items-center gap-10">
+      <h3 className="noto-serif text-base">2</h3>
+      <h1 className="text-8xl px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
+        <div>Selected</div>
+        <div>Projects</div>
+
       </h1>
-
-      <div className="lg:absolute top-52 right-0  w-full h-full flex justify-center inter">
-        <div className="h-auto grid grid-cols-1 lg:grid-cols-2 grid-rows-1 lg:grid-row-2 lg:gap-x-20 gap-y-28">
-          <ProjectCard
-            image="https://images.unsplash.com/photo-1578933356686-0592aa9c5363?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
-            alt="Timeless Heritage"
-            context={"June 2023"}
-            title="Jakarta: A Timeless Heritage"
-          />
-
-          <ProjectCard
-            image={image1}
-            alt="Redesign Netflix Website"
-            context={"May 2023"}
-            title="The American Manhunt Website"
-          />
-        </div>
-      </div>
+      <p className="text-2xl px-8 text-center w-3/4 leading-tight tracking-normal inter font-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, quae inventore tenetur iste magni eaque rem et autem excepturi veritatis quisquam consequatur omnis officia est sint assumenda laudantium sunt soluta vel ipsam magnam quos? Eaque molestias iusto sapiente fugiat praesentium.
+      </p>
     </div>
   );
 }
