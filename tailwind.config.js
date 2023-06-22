@@ -6,6 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+      transitionDuration : {
+        1500 : '1500',
+        2000 : '2000',
+        2500 : '2500',
+        3000 : '3000',
+        3500 : '3500',
+      },
       letterSpacing: {
         verywide : '.5em'
       }

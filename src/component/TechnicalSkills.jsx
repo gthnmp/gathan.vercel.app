@@ -2,22 +2,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState, useRef } from 'react';
 
-export default function Services() {
+export default function TechnicalSkills() {
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center gap-10">
+    <section className="w-screen h-auto flex flex-col justify-center items-center gap-10  transition-opacity duration-1000">
       <h3 className="noto-serif text-base">3</h3>
 
-      <h1 className="text-8xl px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
+      <a href = "/" id = "nav-title"  className="text-8xl px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
         <div>Technical</div>
-        <div>and</div>
-        <div>Other Skills</div>
+        <div>Skills</div>
 
-      </h1>
-      <p className="text-2xl px-8 text-center w-3/4 leading-tight tracking-normal inter font-light">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias, quae inventore tenetur iste magni eaque rem et autem excepturi veritatis quisquam consequatur omnis officia est sint assumenda laudantium sunt soluta vel ipsam magnam quos? Eaque molestias iusto sapiente fugiat praesentium.
+      </a>
+      <p className="text-3xl px-8 text-center w-3/4 leading-tight tracking-normal inter font-light">
+        {"I possess a range of technical skills in web development, including React JS, Three JS, Tailwind, HTML, CSS, and JavaScript. Additionally, I have proficiency in backend development using the MERN Stack (MongoDB, Express, React, Node.js)."}
       </p>
-    </div>
+    </section>
   );
 }
 

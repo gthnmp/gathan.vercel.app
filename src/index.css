@@ -29,12 +29,12 @@ html, body {
 }
 
 
-/* ::-webkit-scrollbar{
+::-webkit-scrollbar{
      display: none;
-} */
+}
 
 .inter {
-     font-family: 'Inter', sans-serif;
+     font-family: 'Open Sans', sans-serif;
 }
 
 .noto-serif {
