@@ -6,7 +6,6 @@ import { Canvas,useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 import { useRef, useState, useEffect } from 'react';
-import { useSpring, animated } from 'react-spring';
 
 const Plane = (props) => {
   const ref = useRef()
