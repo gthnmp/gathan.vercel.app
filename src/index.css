@@ -29,9 +29,9 @@ html, body {
 }
 
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
      display: none;
-}
+} */
 
 .inter {
      font-family: 'Open Sans', sans-serif;

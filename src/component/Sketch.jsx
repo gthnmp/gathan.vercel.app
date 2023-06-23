@@ -58,23 +58,23 @@ const Scene = () => {
   const potraitContainerDimensions = new THREE.Vector2(2, 3);
   const images = [
     { 
-      path : '/assets/LapBanteng.jpg',  
+      path : '/assets/2.jpg',  
       position:[ -10, (32 + planePosition_Y * 2), 0 ]
     },
     { 
-      path : '/assets/Air.jpg',         
-      position:[ -4.5, (35 + planePosition_Y * 2), 0 ]
+      path : '/assets/3.jpg',         
+      position:[ -4, (35 + planePosition_Y * 2), 0 ]
     },
     { 
-      path : '/assets/Audi.jpg',        
+      path : '/assets/4.jpg',        
       position:[ 4.5, (32 + planePosition_Y * 3), 0]
     },
     { 
-      path : '/assets/Sunset.jpg',      
+      path : '/assets/5.jpg',      
       position:[ 8, (35 + planePosition_Y * 3), 0 ]
     },
     { 
-      path : '/assets/Canyon.jpg',      
+      path : '/assets/6.jpg',      
       position:[ 8, (27 + planePosition_Y * 2), 0 ]
     },
   ]
@@ -117,7 +117,7 @@ export default function Sketch () {
   return(
     <div className='h-full w-screen absolute top-0 z-20'>
       <Canvas camera={{ position: [0, 0, 50]}}>
-        <pointLight position={[0, 5, 100]} intensity={1} color="white"/>
+        {/* <pointLight position={[0, 5, 100]} intensity={1} color="white"/> */}
         <Scene/>
       </Canvas>
     </div>
