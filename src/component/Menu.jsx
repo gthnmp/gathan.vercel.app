@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState, useRef } from "react";
@@ -12,14 +13,14 @@ const menuItems = [
   { name: "GitHub", url: "https://github.com/gthnmp", icon: <FaGithub />}
 ];
 
-export default function Menu() {
+export default function Menu({ isDesktop ,...props }) {
   return (
     <nav id="menu-container" className="noto-serif fixed w-screen h-20 top-0 left-0  z-50 flex justify-center">
-      <div className="w-full h-auto flex justify-between items-center px-20 py-16">
+      <div className={`w-full h-auto flex ${isDesktop ? "justify-between" : 'justify-center'} items-center px-20 py-16`}>
         <div id="menu-button" className="font-bold">
           <button><i>Menu</i></button>
         </div>
-        <ul className="flex gap-4">
+        {isDesktop && <ul className="flex gap-4">
           {menuItems.map((item, index) => (
             <li key={index}>
               <a href={item.url} target="_blank" rel="noopener noreferrer">
@@ -27,7 +28,7 @@ export default function Menu() {
               </a>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
     </nav>
   );

@@ -15,14 +15,14 @@ function ProjectCard({ image, alt, context, title }) {
 
 export default function Projects() {
   return (
-    <section className="w-screen h-auto flex flex-col justify-center items-center gap-10  transition-opacity duration-1000">
+    <section className="w-screen h-auto flex flex-col justify-center duration-500 items-center gap-10  transition-opacity">
       <h3 className="noto-serif text-base">2</h3>
-      <a href='/' id = "nav-title" className="text-8xl px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
+      <a href='/' id = "nav-title" className="text-5xl lg:text-8xl px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
         <div>Selected</div>
         <div>Projects</div>
 
       </a>
-      <p className="text-3xl px-8 text-center w-3/4 leading-tight tracking-normal inter font-light">
+      <p className="text-xl lg:text-3xl px-8 text-center w-full lg:w-3/5 leading-tight tracking-normal inter font-light">
       {"I have created a website exploring Jakarta's history and cultural heritage, and another website dedicated to the Netflix series 'American Manhunt,' providing fans with detailed information about the show, its characters, episodes, and behind-the-scenes trivia."}
       </p>
     </section>

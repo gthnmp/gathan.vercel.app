@@ -9,7 +9,7 @@
 #nav-title > div{
   overflow: hidden;
   position: relative;
-  padding-bottom: .5rem;
+  padding-bottom: 1rem;
 }
 
 #nav-title > div:after{

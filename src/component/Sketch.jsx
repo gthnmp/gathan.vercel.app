@@ -10,12 +10,6 @@ import * as THREE from 'three'
 
 import vertex from './shaders/vertex.glsl'
 import fragment from './shaders/fragment.glsl'
-import LapBanteng from '/assets/LapBanteng.jpg'
-import Canyon from '/assets/Canyon.jpg'
-import Sunset from '/assets/Sunset.jpg'
-import Air from '/assets/Air.jpg'
-import Audi from '/assets/Audi.jpg'
-
 
 function calculateScaleFactor(texture, containerSize){
   const containerAspectRatio = containerSize.x / containerSize.y;
