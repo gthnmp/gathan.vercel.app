@@ -7,7 +7,7 @@ export default function Introduction() {
         <div>About Me,</div>
         <div>Myself, & I</div>
       </a>
-      <p className="text-3xl px-8 text-neutral-950 text-center w-3/4 leading-tight tracking-wide inter font-light"> I'm a web developer located in Indonesia. I have serious passion for user interface, animations, and dynamic user experiences. Enthusiastic learner and a problem solver. Interested in the web development spectrum and working ambitious projects with interesting and positive people.  
+      <p className="text-3xl px-8 text-center w-3/4 leading-tight tracking-wide inter font-light"> I'm a web developer located in Indonesia. I have serious passion for user interface, animations, and dynamic user experiences. Enthusiastic learner and a problem solver. Interested in the web development spectrum and working ambitious projects with interesting and positive people.  
       </p>
     </section>
   );

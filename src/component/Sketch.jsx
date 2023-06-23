@@ -1,81 +1,130 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
-import { Canvas,useFrame } from '@react-three/fiber'
-import { OrbitControls, useTexture } from '@react-three/drei'
-import * as THREE from 'three'
 import { useRef, useState, useEffect } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber'
+import { useTexture } from '@react-three/drei'
+import * as THREE from 'three'
 
-const Image = (props) => {
+import vertex from './shaders/vertex.glsl'
+import fragment from './shaders/fragment.glsl'
+import LapBanteng from '/assets/LapBanteng.jpg'
+import Canyon from '/assets/Canyon.jpg'
+import Sunset from '/assets/Sunset.jpg'
+import Air from '/assets/Air.jpg'
+import Audi from '/assets/Audi.jpg'
+
+
+function calculateScaleFactor(texture, containerSize){
+  const containerAspectRatio = containerSize.x / containerSize.y;
+  const imageAspectRatio = texture.image.width / texture.image.height;
+
+  let scaleFactorX = 1;
+  let scaleFactorY = 1;
+  
+  const landscapeFactor = imageAspectRatio / containerAspectRatio;
+  const portraitFactor = containerAspectRatio / imageAspectRatio;
+  
+  const isLandscapeModeContainer = containerAspectRatio >= 1;
+  const isContainerRatioStronger = containerAspectRatio >= imageAspectRatio;
+  
+  
+  if (isContainerRatioStronger) {
+    scaleFactorY = isLandscapeModeContainer ? landscapeFactor : portraitFactor;
+  } else {
+    scaleFactorX = isLandscapeModeContainer ? landscapeFactor : portraitFactor;
+  }
+
+  return {scaleFactorX, scaleFactorY}
+}
+
+const Item = ({texture, dimension, ...props}) => {
   const ref = useRef()
-  const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
-
-  useFrame(() => {
-    ref.current.material.opacity = hovered ? 0.1 : 1;
-    ref.current.material.transparent = true;
-  });
+  const { scaleFactorX, scaleFactorY } = calculateScaleFactor(texture, dimension)
+  const uniforms = {
+    uTexture : { value : texture },
+    uScaleFactorX : { value : scaleFactorX },
+    uScaleFactorY: { value : scaleFactorY },
+  }
 
   return(
-    <mesh
-      {...props}
-      ref={ref}
-      scale={clicked ? 1.5 : 1}
-      onClick={(event) => click(!clicked)}
-      onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}
-    >
-      <planeGeometry args={[1.5,2]} scale={1} />
-      <meshStandardMaterial color={props.color} map={props.map} side={THREE.DoubleSide} />
+    <mesh {...props} ref={ref}>
+      <planeGeometry args={[dimension.x, dimension.y]} scale={1} />
+      <shaderMaterial vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} />
     </mesh>
   )
 }
 
 const Scene = () => {
-  let current = 0;
-  let target = 0;
-  const ease = 0.075;
   const [ planePosition_Y, setPosition ] = useState(0);
   
+  const landscapeContainerDimensions = new THREE.Vector2(3, 2);
+  const potraitContainerDimensions = new THREE.Vector2(2, 3);
+  const images = [
+    { 
+      path : '/assets/LapBanteng.jpg',  
+      position:[ -10, (32 + planePosition_Y * 2), 0 ]
+    },
+    { 
+      path : '/assets/Air.jpg',         
+      position:[ -4.5, (35 + planePosition_Y * 2), 0 ]
+    },
+    { 
+      path : '/assets/Audi.jpg',        
+      position:[ 4.5, (32 + planePosition_Y * 3), 0]
+    },
+    { 
+      path : '/assets/Sunset.jpg',      
+      position:[ 8, (35 + planePosition_Y * 3), 0 ]
+    },
+    { 
+      path : '/assets/Canyon.jpg',      
+      position:[ 8, (27 + planePosition_Y * 2), 0 ]
+    },
+  ]
 
+  /**
+   * This useEffect is used to smooth the image movement 
+   * */  
   useEffect(() => {
+    let current = 0;
+    let target = 0;
+    const ease = 0.075;
     function lerp (start, end, t){
       return start * (1 - t) + end * t;
     }
     
-    function smoothMovement (){
+    function smoothImageMovement (){
       current = lerp(current, target, ease);
       current = parseFloat(current.toFixed(5))
       target = (window.scrollY / window.innerHeight) * 2;
       target = parseFloat(target.toFixed(5))
       setPosition(current)
-      requestAnimationFrame(smoothMovement)
+      requestAnimationFrame(smoothImageMovement)
     }
-    smoothMovement()
+    smoothImageMovement()
   },[])
 
   return(
-    <>
-      <Image color = {0x0000ff} position={[-10, 31 + planePosition_Y, 0]}/>
-      <Image color = {0xff0000} position={[-4,  35   + planePosition_Y * 2, 0]}/>
-      <Image color = {0x00ff00} position={[ 4, 31 + planePosition_Y * 3, 0]}/>
-      <Image color ={0xffff00} position={[ 8,  35   + planePosition_Y, 0]}/>
-      <Image color = {0x00ffff} position={[ 8,  27  + planePosition_Y, 0]}/>
-    </>
+    <group>
+      {images.map((component, key) => {
+          return(
+            <Item position={component.position} texture={useTexture(component.path)} dimension={potraitContainerDimensions} key={key}/>
+          )
+        })
+      }
+    </group>
   )
 }
 
 export default function Sketch () {
-  
-
   return(
     <div className='h-full w-screen absolute top-0 z-20'>
       <Canvas camera={{ position: [0, 0, 50]}}>
-        <pointLight position={[0, 5, 10]} intensity={1} color="white"/>
+        <pointLight position={[0, 5, 100]} intensity={1} color="white"/>
         <Scene/>
-        {/* <ambientLight intensity={0.1} />
-        <pointLight position={[0, 0, 10]} /> */}
       </Canvas>
     </div>
   )

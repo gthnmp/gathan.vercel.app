@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-// import image1 from '../assets/1.jpeg';
 
 function ProjectCard({ image, alt, context, title }) {
   return (

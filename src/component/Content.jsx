@@ -22,7 +22,6 @@ export default function Content() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting){
-          console.log(entry.target)
           entry.target.classList.add('duration-500')
           entry.target.style.opacity = "100%";
         } else {
@@ -35,9 +34,10 @@ export default function Content() {
       observer.observe(s)
     })
   },[])
+
   return (
     <>
-    <SmoothWrapper className="top-0 w-screen bg-neutral-100 h-max flex items-center px-24 flex-col gap-20 lg:gap-60 z-10 pb-60">
+    <SmoothWrapper className="top-0 w-screen bg-neutral-200 text-neutral-800 h-max flex items-center px-24 flex-col gap-20 lg:gap-60 z-10 pb-60">
       <Sketch/>
       <Introduction />
       <About />
