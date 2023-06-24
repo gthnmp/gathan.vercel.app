@@ -2,7 +2,7 @@
 
 This repository serves as a hobby project and implementation of what I've learned in web development.
 
-## Take a Look
+## Have a Look
 
 [gathan.vercel.app](https://gathan.vercel.app)
 
