@@ -6,18 +6,26 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import { useEffect, useState, createContext } from 'react';
+
 import SmoothWrapper from './SmoothWrapper';
-import Sketch from './Sketch';
 import Introduction from './Introduction';
-import Menu from './Menu';
-import Cross from './Cross';
-import '../App.css';
-import { useEffect, useState } from 'react';
 import TableOfContent from './TOC';
+import Sketch from './Sketch';
+import Cross from './Cross';
+import Menu from './Menu';
+
+import cross from '/assets/cross.svg'
+import '../App.css';
+
+export const IconContext = createContext();
 
 export default function Content() { 
   const [ isDesktop, setDeviceSize ] = useState(false);
-  const [ crossVisible, setVisibility ] = useState(true);
+  const [ isCrossVisible, setVisibility ] = useState(true);
+  const [ isImageVisible, setImageVisibility ] = useState(true);
+  const [ crossIcon, setCrossIcon ] = useState([cross, cross])
+  const [ hoverImage, setHoverImage ] = useState([])
 
   useEffect(() => {
     function handleDeviceSize(){
@@ -57,11 +65,13 @@ export default function Content() {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.target.id === 'introduction') {
             setVisibility(false)
+            setImageVisibility(false)
           } else {
             setVisibility(true)
+            setImageVisibility(true)
           }
         });
-      },{threshold : [0.75]});
+      },{threshold : [0.75, 0.9]});
       
       introObserver.observe(intro)
     }
@@ -73,13 +83,15 @@ export default function Content() {
 
   return (
     <>
-    <Cross crossVisible = {crossVisible} />
-    <SmoothWrapper className="top-0 w-screen bg-white text-neutral-800 h-max flex items-center px-24 flex-col gap-20 lg:gap-60 z-10 pb-60">
-      {isDesktop && <Sketch/>}
-      <Introduction />
-      <TableOfContent/>
-    </SmoothWrapper>
-    <Menu isDesktop = {isDesktop} />
+    <IconContext.Provider value={{ isCrossVisible, setVisibility ,hoverImage, setHoverImage }}>
+      <Cross isCrossVisible = {isCrossVisible} crossIcon={crossIcon} hoverImage={hoverImage}/>
+      <SmoothWrapper>
+        <Introduction />
+        <TableOfContent/>
+        {isDesktop && <Sketch/>}
+      </SmoothWrapper>
+      <Menu isDesktop = {isDesktop} />
+    </IconContext.Provider>
     </>
   );
 }

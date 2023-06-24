@@ -16,11 +16,11 @@ const menuItems = [
 export default function Menu({ isDesktop ,...props }) {
   return (
     <>
-      <div id = "menu-button" className="fixed z-10 top-10 left-20 font-bold">
+      <div id = "menu-button" className=" fixed z-10 top-10 left-20 font-bold">
         <button><i>Menu</i></button>
       </div>
       {
-        isDesktop && <ul className="fixed z-20 top-10 right-20 flex gap-4">
+        isDesktop && <ul className="fixed z-20 top-10 right-20 flex gap-4 ">
           {
             menuItems.map((item, index) => (
               <li key = {index}>
