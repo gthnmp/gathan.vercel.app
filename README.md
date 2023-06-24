@@ -2,9 +2,11 @@
 
 This repository serves as a hobby project and implementation of what I've learned in web development.
 
-## Take a Look
+## Have a Look
 
 [gathan.vercel.app](https://gathan.vercel.app)
+
+![gathan vercel app](https://github.com/gthnmp/gathan.vercel.app/assets/130439769/5af98e47-c2cf-4d17-846e-5c0dd4b0ce70)
 
 
 ## Technologies Used
