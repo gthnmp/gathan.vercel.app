@@ -84,7 +84,7 @@ export default function Content() {
           setIsHoverImageVisible,
         }}
       >
-        <Cross />
+        {isDesktop && <Cross />}
         <SmoothWrapper>
           <Introduction />
           <TableOfContent />

@@ -16,7 +16,7 @@ const menuItems = [
 export default function Menu({ isDesktop ,...props }) {
   return (
     <>
-      <div id = "menu-button" className="fixed z-10 top-10 left-20 font-semibold">
+      <div id = "menu-button" className="fixed z-10 top-10 left-1/2 -translate-x-1/2 lg:left-20 font-semibold">
         <button className="px-2"><i>Menu</i></button>
       </div>
       {
