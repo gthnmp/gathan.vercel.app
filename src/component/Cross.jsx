@@ -1,10 +1,13 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react"
+import { IconContext } from "./Content"
 
-export default function Cross ({ isCrossVisible, isImageVisible, crossIcon, hoverImage  }){
+export default function Cross (){
+  const {  isCrossVisible, crossIcon, isHoverImageVisible ,hoverImage } = useContext(IconContext);
   return (
     <>
-      <div id = "left-container" className='fixed left-44 top-1/2 w-16 flex flex-col justify-center items-center overflow-x-visible z-50 '>
-        <div id = "image" className={`absolute w-32 h-20 z-50 transition-all duration-500 ${isCrossVisible ? 'opacity-0' : 'opacity-100'}`}>
+      <div id = "left-container" className='fixed left-40 top-1/2 w-16 flex flex-col justify-center items-center overflow-x-visible z-50 '>
+        <div id = "image-cross" className={`absolute w-32 h-20 z-50 transition-all duration-300 ${isHoverImageVisible ? 'opacity-100' : 'opacity-0'}`}>
           <img src = {hoverImage[0]} className='w-full h-full object-cover' alt='Content Hover Image'></img>
         </div>
 
@@ -13,8 +16,8 @@ export default function Cross ({ isCrossVisible, isImageVisible, crossIcon, hove
         </div>
       </div>
 
-      <div id = "left-container" className='fixed right-44 top-1/2 w-16 flex flex-col justify-center items-center overflow-x-visible z-50 '>
-        <div id = "image" className={`absolute w-32 h-20 z-50 transition-all duration-500 ${isCrossVisible ? 'opacity-0' : 'opacity-100'}`}>
+      <div id = "left-container" className='fixed right-40 top-1/2 w-16 flex flex-col justify-center items-center overflow-x-visible z-50 '>
+        <div id = "image-cross" className={`absolute w-32 h-20 z-50 transition-all duration-300 ${isHoverImageVisible ? 'opacity-100' : 'opacity-0'}`}>
           <img src = {hoverImage[1]} className='w-full h-full object-cover' alt='Content Hover Image'></img>
         </div>
 

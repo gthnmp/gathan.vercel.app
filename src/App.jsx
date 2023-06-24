@@ -3,13 +3,9 @@ import './App.css'
 import { useEffect, useRef, useState } from "react";
 import Content from './component/Content';
 
-
-
-
-
 function App() {
   return (
-    <div id = "app" className='bg-slate-900 relative w-screen h-max text-neutral-800 flex flex-col justify-center items-center gap-20'>
+    <div id = "app" className='relative w-screen h-max text-neutral-800 flex flex-col justify-center items-center gap-20'>
       <Content />
     </div>
   )
