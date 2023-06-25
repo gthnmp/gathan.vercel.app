@@ -6,7 +6,7 @@ This repository serves as a hobby project and implementation of what I've learne
 
 [gathan.vercel.app](https://gathan.vercel.app)
 
-![gathan vercel app](https://github.com/gthnmp/gathan.vercel.app/assets/130439769/5af98e47-c2cf-4d17-846e-5c0dd4b0ce70)
+![Portfolio Preview](https://github.com/gthnmp/gathan.vercel.app/blob/master/public/assets/preview/gathan.vercel.app.png?raw=true)
 
 ## Technologies Used
 
