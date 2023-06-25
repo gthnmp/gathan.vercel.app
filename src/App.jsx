@@ -3,7 +3,6 @@
 import { useState, useEffect, useContext } from 'react';
 import SmoothWrapper from './component/utils/SmoothWrapper';
 import Introduction from './pages/Introduction';
-// import Sketch from './component/utils/Sketch';
 import Cross from './component/utils/Cross';
 import Menu from './component/utils/Menu';
 import {TableOfContent} from './pages/TableOfContent';
