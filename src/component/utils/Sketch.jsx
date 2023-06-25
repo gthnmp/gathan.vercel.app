@@ -58,23 +58,23 @@ const Scene = () => {
   const potraitContainerDimensions = new THREE.Vector2(2, 3);
   const images = [
     { 
-      path : '/assets/2.jpg',  
+      path : '/assets/1.webp',  
       position:[ -10, (32 + planePosition_Y * 2), 0 ]
     },
     { 
-      path : '/assets/3.jpg',         
+      path : '/assets/3.webp',         
       position:[ -4, (35 + planePosition_Y * 2), 0 ]
     },
     { 
-      path : '/assets/4.jpg',        
+      path : '/assets/7.webp',        
       position:[ 4.5, (32 + planePosition_Y * 3), 0]
     },
     { 
-      path : '/assets/5.jpg',      
+      path : '/assets/8.webp',      
       position:[ 8, (35 + planePosition_Y * 3), 0 ]
     },
     { 
-      path : '/assets/6.jpg',      
+      path : '/assets/6.webp',      
       position:[ 8, (27 + planePosition_Y * 2), 0 ]
     },
   ]

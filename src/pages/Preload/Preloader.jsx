@@ -1,12 +1,14 @@
+import { useEffect, useRef, useState } from "react";
+import Revealer from './revealer'
 
 const PreloadImages = () => {
   const items = [];
   
   for (let i = 1; i <= 9; i++) {
-    const imageUrl = `/assets/${i}.jpg`;
+    const imageUrl = `/assets/${i}.webp`;
     const item = (
-      <div key={`layer__item-${i}`} className=".layers__item absolute w-full h-full overflow-hidden bg-blue-950">
-        <div className=".layers__item-img w-full h-full bg-cover" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+      <div key={`layer__item-${i}`} className="layers__item">
+        <div className="layers__item-img" style={{ backgroundImage: `url(${imageUrl})` }}></div>
       </div>
     );
     items.push(item);
@@ -14,14 +16,54 @@ const PreloadImages = () => {
   return items
 }
 
-
 export default function Preloader() {
+  const loadingContainerRef = useRef(null)
+  const numberRef = useRef(null) 
+  const [loadingNumber, setLoadingNumber] = useState(0);
+  const maxLoadingNumber = 100;
+
+  useEffect(() => {
+    numberRef.current.style.transform = 'translate3d(0, 0%, 0)'
+
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        setLoadingNumber((prevNumber) => {
+          const randomIncrement = Math.floor(Math.random() * 10) + 1;
+          const nextNumber = prevNumber + randomIncrement;
+          return nextNumber <= maxLoadingNumber ? nextNumber : maxLoadingNumber;
+        });
+      }, 100);
+
+      return () => clearInterval(interval)
+    },1000)
+
+    if(loadingNumber === maxLoadingNumber){
+      setTimeout(() => {
+        numberRef.current.style.transform = 'translateY(-100%)';
+      }, 1000)
+      
+      
+      
+      setTimeout(() => {
+        const revealer = new Revealer()
+        revealer.reveal()
+      }, 1500)
+      
+      setTimeout(() => {
+        loadingContainerRef.current.style.backgroundColor = 'transparent'; 
+      },2500)
+    }
+    
+  },[loadingNumber])
 
   return (
-    <div id="preload" className="fixed top-0 w-screen h-screen bg-green-500 z-[100]">
-      {/* <PreloadImages/> */}
-      {/* <div id = "preload-number">foo</div>
-      <div id = "preload-image"></div> */}
+    <div id="preload" ref = {loadingContainerRef} className="fixed top-0 w-screen h-screen flex flex-col justify-center items-center z-50 bg-white text-neutral-800 transition-all duration-1000 translate-y-0">
+      <div id = "preload-number" className="overflow-hidden">
+        <h1 ref = {numberRef} className="font-semibold text-2xl transition-all duration-1000 translate-y-full">{loadingNumber}</h1>
+      </div>
+      <div className="layers">
+        <PreloadImages/>
+      </div>
     </div>
   );
 }

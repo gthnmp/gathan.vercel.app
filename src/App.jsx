@@ -75,7 +75,7 @@ export default function App() {
         {isDesktop && <Sketch />}
       </SmoothWrapper>
       <Menu isDesktop={isDesktop} />
-      {/* <Preloader/> */}
+      <Preloader/>
     </>
   );
 }
