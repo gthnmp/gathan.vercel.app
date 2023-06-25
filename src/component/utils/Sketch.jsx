@@ -8,8 +8,8 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
-import vertex from './shaders/vertex.glsl'
-import fragment from './shaders/fragment.glsl'
+import vertex from '../shaders/vertex.glsl'
+import fragment from '../shaders/fragment.glsl'
 
 function calculateScaleFactor(texture, containerSize){
   const containerAspectRatio = containerSize.x / containerSize.y;

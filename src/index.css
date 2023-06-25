@@ -29,11 +29,9 @@ html, body {
      box-sizing: border-box;
 }
 
-
-
-/* ::-webkit-scrollbar{
+::-webkit-scrollbar{
      display: none;
-} */
+}
 
 .inter {
      font-family: 'Open Sans', sans-serif;

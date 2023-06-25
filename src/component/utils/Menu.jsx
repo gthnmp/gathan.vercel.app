@@ -15,12 +15,12 @@ const menuItems = [
 
 export default function Menu({ isDesktop ,...props }) {
   return (
-    <>
-      <div id = "menu-button" className="fixed z-10 top-10 left-1/2 -translate-x-1/2 lg:left-20 font-semibold">
-        <button className="px-2"><i>Menu</i></button>
+    <nav>
+      <div id = "menu-button" className="fixed z-10 top-10 left-1/2 -translate-x-1/2 lg:left-20 lg:-translate-x-0 font-semibold">
+        <button className=""><i>Menu</i></button>
       </div>
       {
-        isDesktop && <ul className="fixed z-20 top-10 right-20 flex gap-4 p-2">
+        isDesktop && <ul className="fixed z-10 top-10 right-1/2 -translate-x-1/2 lg:right-20 lg:-translate-x-0 flex gap-4 p-2">
           {
             menuItems.map((item, index) => (
               <li key = {index}>
@@ -32,6 +32,6 @@ export default function Menu({ isDesktop ,...props }) {
           }
         </ul>
       } 
-    </>
+    </nav>
   );
 }

@@ -51,9 +51,9 @@ const SmoothWrapper = ({ className: additionalClassNames, ...props }) => {
   }, []);
 
   return (
-    <div ref={contentRef} className={customizedClassName} style={props.style}>
+    <main ref={contentRef} className={customizedClassName} style={props.style}>
       {props.children}
-    </div>
+    </main>
   );
 };
 
