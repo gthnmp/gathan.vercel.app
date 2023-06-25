@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.13.3",
     "gsap": "^3.12.1",
     "imagesloaded": "^5.0.0",
     "react": "^18.2.0",
