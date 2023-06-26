@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import { useState, useEffect, useContext } from 'react';
-import SmoothWrapper from './component/utils/SmoothWrapper';
-import Introduction from './pages/Introduction';
-import Cross from './component/utils/Cross';
-import Menu from './component/utils/Menu';
-import {TableOfContent} from './pages/TableOfContent';
+import { useEffect, useContext } from 'react';
+import SmoothWrapper from './component/SmoothWrapper';
+import Cross from './component/Cross';
+import Menu from './component/Menu';
+
+import { TableOfContent } from './pages/TableOfContent';
+import { Preloader } from './pages/Preload';
+
 import { StateContext } from './states';
-import Preloader from './pages/Preload/Preloader';
 
 export default function App() {
   const { isDesktop, setIsDesktop, setIsHoverImageVisible, setIsCrossVisible } = useContext(StateContext)
@@ -69,9 +69,7 @@ export default function App() {
     <>
       {isDesktop && <Cross />}
       <SmoothWrapper>
-        <Introduction />
         <TableOfContent />
-        {/* {isDesktop && <Sketch />} */}
       </SmoothWrapper>
       <Menu isDesktop={isDesktop} />
       <Preloader/>

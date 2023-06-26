@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
-import { StateContext } from "../../states";
+import { StateContext } from "../states";
 
 export default function Cross() {
   const { isCrossVisible, crossIcon, isHoverImageVisible, hoverImage } = useContext(StateContext);

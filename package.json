@@ -10,14 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.77.0",
-    "@react-three/fiber": "^8.13.3",
     "gsap": "^3.12.1",
     "imagesloaded": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1",
-    "three": "^0.153.0"
+    "react-icons": "^4.10.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

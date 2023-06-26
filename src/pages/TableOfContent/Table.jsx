@@ -2,9 +2,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect, useRef, useContext } from 'react';
 import contents from './TableOfContent.json';
-import { useState, useEffect, useRef, useContext } from 'react';
 import { StateContext } from '../../states';
+import Introduction from './Introduction';
 
 const PageNumber = ({ number }) => (
   <h3 className="noto-serif text-base">{number}</h3>
@@ -38,9 +39,7 @@ const Header = ({ title, directTo, hoverImage }) => {
   return (
     <div className="z-40 lg:text-7xl text-5xl flex justify-center items-center px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
       <a id="nav-title" ref={ref} href={directTo} className="w-max">
-        {title.map((title, index) => (
-          <div key={index}>{title}</div>
-        ))}
+        {title.map( (title, index) => <div key={index}>{title}</div> )}
       </a>
     </div>
   );
@@ -55,6 +54,7 @@ const Paragraph = ({ paragraph }) => (
 export default function Layout() {
   return (
     <>
+    <Introduction/>
       {contents.map((content, index) => (
         <section key={index} className="w-screen h-auto transition-opacity duration-500 flex flex-col justify-center items-center gap-10">
           <PageNumber number={index + 1} />

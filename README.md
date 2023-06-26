@@ -10,15 +10,17 @@ This repository serves as a hobby project and implementation of what I've learne
 
 ## Technologies Used
 
-- React
-- Vite
+- Vite Framework
+- ReactJS
+- JavaScript
 - HTML
 - Tailwind + CSS
-- JavaScript
 - Responsive Design
-- State Management (e.g., Context, Redux)
+- State Management (e.g., Context)
 - Three.js
 - Shaders (GLSL)
+- Gsap
+- Vercel
 
 ## Learning Objectives
 
@@ -26,7 +28,6 @@ This repository serves as a hobby project and implementation of what I've learne
 - Learn and implement a modern build tool like Vite
 - Gain experience in styling and responsive design techniques
 - Enhance my knowledge of JavaScript concepts and best practices
-- Practice integrating and consuming APIs
 - Improve my project structuring and organization skills
 - Experiment with state management solutions
 
@@ -55,7 +56,9 @@ This repository serves as a hobby project and implementation of what I've learne
 
 ## Acknowledgements
 
-- [houseofgucci.aristidebenoist.com](houseofgucci.aristidebenoist.com) - This portfolio is inspired by Aristide Benoist's project
+- [houseofgucci.aristidebenoist.com](houseofgucci.aristidebenoist.com) - This portfolio is inspired by Aristide Benoist's project.
+- [camillemormal.com](https://camillemormal.com/) - The rapid image animation is inspired by her portfolio.
+- [jacekjeznach.com](https://jacekjeznach.com/) - Most of the paragraph of this portfolio is inspired by his great portfolio.
 
 ## Contact
 
