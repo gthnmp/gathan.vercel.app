@@ -14,7 +14,7 @@ export default class Revealer {
         this.layers = [];
         [...document.querySelectorAll('.layers__item')].forEach(item => this.layers.push(new ImageLayer(item)));
         this.layersTotal = this.layers.length;
-        // this.gridItems = [...document.querySelectorAll('.grid__item')];
+        this.gridItems = [...document.querySelectorAll('.grid__item')];
         this.options = {
             duration: 1.25,
             panelDelay: 0.25
@@ -49,12 +49,12 @@ export default class Revealer {
             y: (index) => index ? '101%' : '-101%'
         }, 'halfway')
         // show grid items
-        // .fromTo(this.gridItems, {y: () => randomFloat(100,500)}, {
-        //     duration: this.options.duration*2,
-        //     ease: 'Expo.easeOut',
-        //     y: 0,
-        //     opacity: 1
-        // }, 'halfway');  
+        .fromTo(this.gridItems, {y: () => randomFloat(100,500)}, {
+            duration: this.options.duration*2,
+            ease: 'Expo.easeOut',
+            y: 0,
+            opacity: 1
+        }, 'halfway');  
     }
     reveal() {
         this.tl.restart();

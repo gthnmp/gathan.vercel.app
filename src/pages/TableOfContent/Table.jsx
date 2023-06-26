@@ -5,7 +5,6 @@
 import { useEffect, useRef, useContext } from 'react';
 import contents from './TableOfContent.json';
 import { StateContext } from '../../states';
-import Introduction from './Introduction';
 
 const PageNumber = ({ number }) => (
   <h3 className="noto-serif text-base">{number}</h3>
@@ -51,10 +50,9 @@ const Paragraph = ({ paragraph }) => (
   </p>
 );
 
-export default function Layout() {
+export default function Table() {
   return (
     <>
-    <Introduction/>
       {contents.map((content, index) => (
         <section key={index} className="w-screen h-auto transition-opacity duration-500 flex flex-col justify-center items-center gap-10">
           <PageNumber number={index + 1} />

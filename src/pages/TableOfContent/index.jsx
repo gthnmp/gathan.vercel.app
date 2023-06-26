@@ -1,1 +1,1 @@
-export { default as TableOfContent }  from './Table'
+export { default as TableOfContent }  from './layout'
