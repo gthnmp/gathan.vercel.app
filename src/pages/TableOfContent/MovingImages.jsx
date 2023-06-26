@@ -4,6 +4,17 @@ export default function Images(){
   const gridContainerRef = useRef(null)
 
   useEffect(() => {
+    const images = document.querySelectorAll('.grid__item')
+    console.log(images)
+    images.forEach((img) => {
+      img.addEventListener('click', () =>{
+        console.log('foo from ', img)
+      })
+    })
+
+  },[])
+
+  useEffect(() => {
     let current = 0;
     let target = 0;
     const ease = 0.05;
@@ -28,12 +39,24 @@ export default function Images(){
 
   return(
     <div id ="moving-img" ref = {gridContainerRef} className="grid w-screen h-screen">
-      <div className="grid__item grid__item--a" style={{"backgroundImage":"url(/assets/3.jpg)"}}></div>
-      <div className="grid__item grid__item--b" style={{"backgroundImage":"url(/assets/1.jpg)"}}></div>
-      <div className="grid__item grid__item--c" style={{"backgroundImage":"url(/assets/4.jpg)"}}></div>
-      <div className="grid__item grid__item--d" style={{"backgroundImage":"url(/assets/5.jpg)"}}></div>
-      <div className="grid__item grid__item--e" style={{"backgroundImage":"url(/assets/8.jpg)"}}></div>
-      <div className="grid__item grid__item--f" style={{"backgroundImage":"url(/assets/6.jpg)"}}></div>  
+      <div className="grid__item grid__item--a">
+        <img src = "/assets/3.jpg" className="w-full h-full object-cover"></img>
+      </div>
+      <div className="grid__item grid__item--b">
+        <img src = "/assets/1.jpg" className="w-full h-full object-cover"></img>
+      </div>
+      <div className="grid__item grid__item--c">
+        <img src = "/assets/4.jpg" className="w-full h-full object-cover"></img>
+      </div>
+      <div className="grid__item grid__item--d">
+        <img src = "/assets/5.jpg" className="w-full h-full object-cover"></img>
+      </div>
+      <div className="grid__item grid__item--e">
+        <img src = "/assets/8.jpg" className="w-full h-full object-cover"></img>
+      </div>
+      <div className="grid__item grid__item--f">
+        <img src = "/assets/6.jpg" className="w-full h-full object-cover"></img>
+      </div>
     </div>
   )
 }
