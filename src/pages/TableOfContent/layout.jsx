@@ -1,6 +1,6 @@
 import Introduction from "./Introduction"
 import Table from "./Table"
-import Images from "./images"
+import Images from "./MovingImages"
 
 export default function Layout(){
   return(
