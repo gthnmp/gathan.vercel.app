@@ -17,7 +17,7 @@ const PreloadImages = () => {
 }
 
 export default function Preloader() {
-  const [ loadingInterval, setLoadingInterval ] = useState(1500)
+  const [ loadingInterval, setLoadingInterval ] = useState(1000)
   const [ loadingNumber, setLoadingNumber ] = useState(0);
   const [ loadingRate, setLoadingRate ] = useState(5)
   const loadingContainerRef = useRef(null)
@@ -29,10 +29,10 @@ export default function Preloader() {
   }, []);
 
   useEffect(() => {
-    preloadImages('.layers__item-img').then(() => {
-      setLoadingInterval(50)
-      setLoadingRate(10)
-    })
+      preloadImages('.layers__item-img').then(() => {
+        setLoadingInterval(50)
+        setLoadingRate(10)
+      })
 
     setTimeout(() => {
       const interval = setInterval(() => {
