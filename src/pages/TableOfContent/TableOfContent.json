@@ -3,21 +3,21 @@
     "name" : "About Me",
     "title" : [ "About Me,", "Myself, & I" ],
     "paragraph" : "I'm a web developer located in Indonesia. I have serious passion for user interface, animations, and dynamic user experiences. Enthusiastic learner and a problem solver. Interested in the web development spectrum and working ambitious projects with interesting and positive people.",
-    "hoverImage":["/assets/6.jpg", "/assets/3.jpg"],
+    "hoverImage":["/assets/6.jpg", "/assets/5.jpg"],
     "directTo":"/"
   },
   {
     "name" : "Selected Projects",
     "title" : [ "Selected", "Projects" ],
     "paragraph" : "I have created a website exploring Jakarta's history and cultural heritage, and another website dedicated to the Netflix series 'American Manhunt,' providing fans with detailed information about the show, its characters, episodes, and behind-the-scenes trivia.",
-    "hoverImage":["/assets/4.jpg", "/assets/2.jpg"],
+    "hoverImage":["/assets/jakarta.jpg", "/assets/manhunt.jpg"],
     "directTo":"/"
   },
   {
     "name" : "Technical Skills",
     "title" : [ "Technical", "Skills" ],
     "paragraph" : "I possess a range of technical skills in web development, including React JS, Three JS, Tailwind, HTML, CSS, and JavaScript. Additionally, I have proficiency in backend development using the MERN Stack (MongoDB, Express, React, Node.js).",
-    "hoverImage":["/assets/5.jpg", "/assets/1.jpg"],
+    "hoverImage":["/assets/7.jpg", "/assets/1.jpg"],
     "directTo":"/"
   },
   {

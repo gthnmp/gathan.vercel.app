@@ -136,12 +136,13 @@
   border: 1px solid transparent;
   transition: border;
   transition-duration: 500ms;
+  overflow: hidden;
 }
 
 .grid__item > img {
-  transition: opacity;
-  transition-duration: 300ms;
-  opacity: 1;
+  opacity: 1;  
+  transform: translateY(0%);
+  transition: opacity 300ms, transform ease 500ms;
 }
 
 .grid__item:hover{

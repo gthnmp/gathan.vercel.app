@@ -36,7 +36,7 @@ const Header = ({ title, directTo, hoverImage }) => {
   }, []);
 
   return (
-    <div className="z-40 lg:text-7xl text-5xl flex justify-center items-center px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
+    <div className="z-40 lg:text-8xl text-5xl flex justify-center items-center px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
       <a id="nav-title" ref={ref} href={directTo} className="w-max">
         {title.map( (title, index) => <div key={index}>{title}</div> )}
       </a>
