@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import cross from '/assets/cross.svg'
 
 export const StateContext = createContext();
@@ -10,6 +10,7 @@ export const StateProvider = ({ children }) => {
   const [hoverImage, setHoverImage] = useState([]);
   const [crossIcon, setCrossIcon] = useState([cross, cross]);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [pathLocation, setLocation] = useState("/")
 
   return (
     <StateContext.Provider
@@ -24,6 +25,8 @@ export const StateProvider = ({ children }) => {
         setCrossIcon,
         isDesktop,
         setIsDesktop,
+        pathLocation,
+        setLocation
       }}
     >
       {children}

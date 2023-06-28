@@ -38,7 +38,7 @@ export default function Images(){
   },[])
 
   return(
-    <div id ="moving-img" ref = {gridContainerRef} className="grid w-screen h-screen">
+    <div id ="moving-img" ref = {gridContainerRef} className="grid-container w-screen h-screen">
       <div className="grid__item grid__item--a">
         <img src = "/assets/3.jpg" className="w-full h-full object-cover"></img>
       </div>

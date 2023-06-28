@@ -1,20 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Revealer from './revealer'
 import { preloadImages } from "./utils";
-
-const PreloadImages = () => {
-  const items = [];
-  for (let i = 1; i <= 8; i++) {
-    const imageUrl = `/assets/${i}.jpg`;
-    const item = (
-      <div key={`layer__item-${i}`} className="layers__item">
-        <div className="layers__item-img" style={{ backgroundImage: `url(${imageUrl})` }}></div>
-      </div>
-    );
-    items.push(item);
-  }
-  return items
-}
+import Transition from "../../component/Transition";
 
 export default function Preloader() {
   const [ loadingInterval, setLoadingInterval ] = useState(1000)
@@ -29,10 +16,10 @@ export default function Preloader() {
   }, []);
 
   useEffect(() => {
-      preloadImages('.layers__item-img').then(() => {
-        setLoadingInterval(50)
-        setLoadingRate(10)
-      })
+    preloadImages('.layers__item-img').then(() => {
+      setLoadingInterval(50)
+      setLoadingRate(10)
+    })
 
     setTimeout(() => {
       const interval = setInterval(() => {
@@ -71,9 +58,7 @@ export default function Preloader() {
           <h1 ref = {numberRef} className="font-semibold text-2xl transition-all duration-1000 translate-y-full">{loadingNumber}</h1>
         </div>
       </div>
-      <div className="layers">
-        <PreloadImages/>
-      </div>
+      <Transition/>
     </>
   );
 }

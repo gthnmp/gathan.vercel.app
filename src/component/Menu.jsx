@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { StateContext } from "../states";
 
 const iconClassname = 'hover:fill-neutral-400 transition-colors duration-300'
 
@@ -13,7 +14,8 @@ const menuItems = [
   { name: "GitHub", url: "https://github.com/gthnmp", icon: <FaGithub />}
 ];
 
-export default function Menu({ isDesktop ,...props }) {
+export default function Menu({ ...props }) {
+  const { isDesktop } = useContext(StateContext)
   return (
     <nav>
       <div id = "menu-button" className="fixed z-10 top-10 left-1/2 -translate-x-1/2 lg:left-20 lg:-translate-x-0 font-semibold">
