@@ -21,7 +21,6 @@ const Page = () => {
 export default function Menu({...props}) {
   const { isDesktop } = useContext(StateContext);
   const [ buttonClicked, setButtonState ] = useState(false);
-  const pageRef = useRef(null)
 
   const menuButtonClassname = "fixed z-10 top-10 left-1/2 -translate-x-1/2 lg:left-24 lg:-translate-x-0 font-semibold z-30";
   const menuListClassname = "fixed z-10 top-10 right-1/2 -translate-x-1/2 lg:right-24 lg:-translate-x-0 flex gap-4 p-2";
