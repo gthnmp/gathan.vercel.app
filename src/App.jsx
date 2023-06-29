@@ -1,26 +1,40 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route, Outlet  } from 'react-router-dom';
 import { useContext } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { StateContext } from './states';
-import SmoothWrapper from './component/SmoothWrapper';
 import Cross from './component/Cross';
-import Menu from './component/Menu';
+import { Menu } from './pages/Menu';
 import { TableOfContent } from './pages/TableOfContent';
 import { About } from './pages/About';
 import { Preloader } from './pages/Preload';
-const router = createBrowserRouter([
-  { path: '/', element: <TableOfContent /> },
-  { path: '/about', element: <About /> }
-]);
 
-export default function App() {
+
+const Root = () => {
   const { pathLocation, isDesktop } = useContext(StateContext);
   return (
     <>
-      <RouterProvider router={router} />
-      <Menu />
+      <Outlet/>
       <Preloader />
+      <Menu />
       {pathLocation === '/' && isDesktop && <Cross />}
+    </>
+    )
+}
+
+  
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Root/>}>
+      <Route index element ={<TableOfContent />} />
+      <Route path="about" element ={<About />} />
+    </Route>
+  )
+)
+  
+export default function App() {
+  return (
+    <>
+    <RouterProvider router={router}/>
     </>
   );
 }

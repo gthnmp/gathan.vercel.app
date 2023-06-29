@@ -7,7 +7,7 @@ import './component/utils/css/animation.css'
 import  { StateProvider }  from './states.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <StateProvider>
-    <App />
-  </StateProvider>
+    <StateProvider>
+      <App />
+    </StateProvider>
 );

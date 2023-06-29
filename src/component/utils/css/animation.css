@@ -24,7 +24,6 @@
   transition: all .8s;
   transform: translateX(-100%);
   /* transform-origin: 100% 50% 0%; */
-  /* transition-timing-function: cubic-bezier(.8,.05,.44,.48) */
 }
 
 #nav-title:hover > div::after{

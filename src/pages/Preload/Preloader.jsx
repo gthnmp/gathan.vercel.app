@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import Revealer from './revealer'
-import { preloadImages } from "./utils";
 import Transition from "../../component/Transition";
+import { preloadImages } from "./utils";
+import Revealer from './revealer'
 
 export default function Preloader() {
   const [ loadingInterval, setLoadingInterval ] = useState(1000)
