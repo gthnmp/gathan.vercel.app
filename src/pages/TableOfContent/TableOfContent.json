@@ -10,8 +10,8 @@
     "name" : "Selected Projects",
     "title" : [ "Selected", "Projects" ],
     "paragraph" : "Created Jakarta history website, Netflix's 'American Manhunt' fan site. Detailed information, episodes, trivia.",
-    "hoverImage":["/assets/jakarta.jpg", "/assets/manhunt.jpg"],
-    "directTo":"/"
+    "hoverImage":["/assets/jakarta.jpg", "/assets/shader.png"],
+    "directTo":"projects"
   },
   {
     "name" : "Technical Skills",
@@ -24,7 +24,7 @@
     "name" : "Contact",
     "title" : [ "Get in touch" ],
     "paragraph" : "Open for questions, collaborations. Contact me via email for prompt response. Thank you for visiting!",
-    "hoverImage":["/assets/7.jpg", "/assets/8.jpg"],
+    "hoverImage":["/assets/4.jpg", "/assets/8.jpg"],
     "directTo":"/"
   }
 ]

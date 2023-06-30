@@ -8,12 +8,12 @@ import { observeCross, observeSection } from "../../component/utils/js/observer"
 import SmoothWrapper from "../../component/SmoothWrapper"
 
 export default function Layout(){
-  const { setIsDesktop, setIsHoverImageVisible, setIsCrossVisible } = useContext(StateContext)
-
+  const { setIsDesktop, setIsHoverImageVisible, setIsCrossVisible, setLocation } = useContext(StateContext)
   useEffect(() => {
     handleDeviceSize(setIsDesktop);
     observeSection();
     observeCross(setIsHoverImageVisible, setIsCrossVisible);
+    setLocation("/")
   }, []);
 
   return(

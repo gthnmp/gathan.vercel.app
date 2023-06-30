@@ -1,0 +1,37 @@
+.line > h1{
+  transition: all 600ms;
+  transform: translateY(-5%);
+}
+
+.project:hover > .text > .line > h1{
+  transform: translateY(-105%);
+}
+
+.line > h1::after{
+  font-family: 'Noto Serif', serif;
+  position: absolute;
+  transform: translateY(100%);
+  left: 0;
+  content: attr(data-content);
+  font-style: italic;
+}
+
+.line > h1::after::after{
+  content: "n";
+}
+
+
+.hoverimage {
+  transition: opacity 250ms, transform 500ms;
+  transition-timing-function: ease;
+}
+
+.hoverimage > img {
+  transition: transform 1000ms;
+  transition-timing-function: ease;
+}
+
+
+.viewer{
+  border: 1px solid black;
+}

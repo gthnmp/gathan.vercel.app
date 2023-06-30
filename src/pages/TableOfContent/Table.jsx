@@ -54,7 +54,7 @@ const Header = ({ title, directTo, hoverImage }) => {
     <div className="z-40 lg:text-8xl text-5xl flex justify-center items-center px-8 text-center w-full leading-tight tracking-wide noto-serif font-medium uppercase">
       <NavLink reloadDocument to={directTo} id="nav-title" ref={ref} className="w-max">
         {title.map( (title, index) => <div key={index}>{title}</div> )}
-      </NavLink>
+      </NavLink>  
     </div>
   );
 };
