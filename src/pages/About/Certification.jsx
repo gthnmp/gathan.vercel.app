@@ -26,6 +26,11 @@ const certifications = [
     date: 'June 2023'
   },
   {
+    name: 'Certificate of Competence',
+    issuer: ' National Agency for Certification of Professions',
+    date: 'March 2023'
+  },
+  {
     name: 'MikroTik Certified Network Associate',
     issuer: 'MikroTik',
     date: 'October 2022'

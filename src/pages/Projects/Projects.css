@@ -29,6 +29,8 @@
 .hoverimage > img {
   transition: transform 1000ms;
   transition-timing-function: ease;
+  -webkit-filter: brightness(0.7);
+  filter: brightness(0.7);
 }
 
 
