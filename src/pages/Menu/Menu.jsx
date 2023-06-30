@@ -27,7 +27,7 @@ export default function Menu({...props}) {
     <>
       <nav>
         <div id="menu-button" className={menuButtonClassname}>
-          <NavLink reloadDocument to={pathLocation === "/" ?  "" : "/"}><i>{pathLocation === "/" ? "Table Of Content" : "Back"}</i></NavLink>
+          <NavLink to={pathLocation === "/" ?  "" : "/"}><i>{pathLocation === "/" ? "Table Of Content" : "Back"}</i></NavLink>
         </div>
         
         {isDesktop && (

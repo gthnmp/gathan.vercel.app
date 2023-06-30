@@ -4,7 +4,7 @@
     "title" : [ "About Me,", "Myself, & I" ],
     "paragraph" : "Web developer. UI, animations, dynamic experiences. Enthusiastic learner, problem solver. Ambitious projects, positive collaborations.",
     "hoverImage":["/assets/6.jpg", "/assets/5.jpg"],
-    "directTo":"about"
+    "directTo":"/about"
   },
   {
     "name" : "Selected Projects",
@@ -18,7 +18,7 @@
     "title" : [ "Technical", "Skills" ],
     "paragraph" : "Proficient in React JS, Three JS, Tailwind, HTML, CSS, JavaScript. Backend expertise in MERN Stack.",
     "hoverImage":["/assets/7.jpg", "/assets/1.jpg"],
-    "directTo":"/"
+    "directTo":"skills"
   },
   {
     "name" : "Contact",
